@@ -1,10 +1,30 @@
-﻿import React from 'react';
+﻿"use client";
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollingUp = currentScrollY < lastScrollY;
+
+      setIsVisible(scrollingUp || currentScrollY < 80);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full z-50 px-6 lg:px-12 py-6">
+    <header className={`fixed top-0 w-full z-50 px-6 lg:px-12 py-6 transition-transform duration-500 ease-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="flex items-center justify-between">
         {/* Left */}
         <div className="flex-shrink-0">

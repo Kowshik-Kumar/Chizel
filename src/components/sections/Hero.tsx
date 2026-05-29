@@ -2,6 +2,16 @@
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Hero() {
+  const stripeItems = [
+    'PERFORMANCE',
+    'DESIGN',
+    'DEVELOPMENT',
+    'STRATEGY',
+    'BRANDING',
+    'MOTION',
+    
+  ];
+
   return (
     <section className="relative min-h-screen pt-24 pb-12 flex flex-col justify-end border-b border-[#1F1F1F] px-6 lg:px-12 bg-black text-white">
       <div className="flex flex-col md:flex-row w-full justify-between items-start mb-8 text-xs font-mono text-zinc-400 uppercase tracking-widest gap-4">
@@ -47,10 +57,21 @@ export default function Hero() {
         </div>
       </div>
       
-      {/* Marquee */}
-      <div className="w-full border-t border-b border-[#1F1F1F] py-3 mt-12 overflow-hidden flex whitespace-nowrap bg-black relative">
-        <div className="animate-marquee inline-block font-mono text-xs tracking-[0.2em] text-zinc-500 uppercase">
-          DESIGN ● DEVELOPMENT ● STRATEGY ● BRANDING ● MOTION ● PERFORMANCE ● DESIGN ● DEVELOPMENT ● STRATEGY ● BRANDING ● MOTION ● PERFORMANCE ● 
+      {/* Moving stripe */}
+      <div className="relative mt-12 w-full overflow-hidden border-y border-[#1F1F1F] bg-black py-2.5">
+        <div className="animate-marquee flex w-max items-center whitespace-nowrap" style={{ animationDirection: 'reverse' }}>
+          {[0, 1].map((group) => (
+            <div key={group} className="flex shrink-0 items-center gap-14 pr-14 font-mono text-lg md:text-[22px] uppercase leading-none tracking-[0.18em] text-zinc-500">
+              {stripeItems.map((item, index) => (
+                <React.Fragment key={`${group}-${item}-${index}`}>
+                  <span className="shrink-0">{item}</span>
+                  <span
+                    className={`h-2.5 w-2.5 rounded-full shrink-0 ${index === stripeItems.length - 1 ? 'bg-red-500' : index % 3 === 0 ? 'bg-violet-500' : index % 3 === 1 ? 'bg-sky-400' : 'bg-emerald-400'}`}
+                  />
+                </React.Fragment>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
