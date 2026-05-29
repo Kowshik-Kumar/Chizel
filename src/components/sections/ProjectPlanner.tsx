@@ -61,10 +61,18 @@ export default function ProjectPlanner() {
 
             <div className="flex flex-col gap-4">
               <label className="font-mono text-[10px] text-zinc-500">PRIMARY GOAL</label>
-              <button type="button" className="flex justify-between items-center w-full bg-zinc-900 border border-zinc-700 p-4 text-left font-sans text-sm text-white transition-colors">
-                <span>Marketing site / landing page</span>
-                <span className="text-zinc-500 text-xs">▼</span>
-              </button>
+              <select
+                defaultValue=""
+                className="w-full bg-zinc-900 border border-zinc-700 p-4 text-left font-sans text-sm text-white transition-colors focus:outline-none focus:border-white rounded-none"
+              >
+                <option value="" disabled>
+                  Select a project type
+                </option>
+                <option value="landing-page">Landing page</option>
+                <option value="professional-dashboard">Professional dashboard</option>
+                <option value="full-stack-website">Full stack website</option>
+                <option value="ui-ux-works">UI/UX works</option>
+              </select>
             </div>
 
             <div className="flex flex-col gap-2">

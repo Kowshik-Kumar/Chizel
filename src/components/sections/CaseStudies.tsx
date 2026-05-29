@@ -63,7 +63,7 @@ export default function CaseStudies() {
 
                     <div className="aspect-[16/10] w-full bg-black">
                       <iframe
-                        title="Rudra Finance Live Preview"
+                        title="Rudra Finance"
                         src="https://rudrabusinesssolutions.github.io/Rudra_Finance/"
                         className={`w-full h-full border-0 transition-all duration-700 ${activeIndex === i ? 'pointer-events-auto mix-blend-normal opacity-100' : 'pointer-events-none mix-blend-luminosity opacity-80'}`}
                         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
