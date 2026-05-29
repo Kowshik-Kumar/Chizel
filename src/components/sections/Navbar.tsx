@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 w-full z-50 mix-blend-difference px-6 lg:px-12 py-6">
+    <header className="fixed top-0 w-full z-50 px-6 lg:px-12 py-6">
       <div className="flex items-center justify-between">
         {/* Left */}
         <div className="flex-shrink-0">

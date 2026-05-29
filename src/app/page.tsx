@@ -9,7 +9,6 @@ import { ArrowUpRight } from 'lucide-react';
 export default function Home() {
   return (
     <div className="bg-black min-h-screen text-white" id="top">
-      <Navbar />
       <Hero />
       <ServicesBento />
       <ProcessTimeline />
