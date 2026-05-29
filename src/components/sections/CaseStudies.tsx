@@ -3,10 +3,29 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
+type LiveProject = {
+  title: string;
+  type: string;
+  year: string;
+  desc: string;
+  isLive: true;
+};
+
+type StaticProject = {
+  title: string;
+  type: string;
+  year: string;
+  desc: string;
+  img: string;
+  isLive?: false;
+};
+
+type Project = LiveProject | StaticProject;
+
 export default function CaseStudies() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const projects = [
+  const projects: Project[] = [
     { title: "Rudra Finance", type: "LIVE", year: "2026", desc: "Interactive live preview — embedded site.", isLive: true },
   ];
 
