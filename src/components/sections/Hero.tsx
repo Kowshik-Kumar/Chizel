@@ -6,6 +6,7 @@ export default function Hero() {
     <section className="relative min-h-screen pt-24 pb-12 flex flex-col justify-end border-b border-[#1F1F1F] px-6 lg:px-12 bg-black text-white">
       <div className="flex flex-col md:flex-row w-full justify-between items-start mb-8 text-xs font-mono text-zinc-400 uppercase tracking-widest gap-4">
         <div>[ 01 / INDEX ]</div>
+        <div className="hidden md:block">LAT 40.7128° N · LON 74.0060° W</div>
         <div>AVAILABLE — Q3 2026</div>
       </div>
       
@@ -18,7 +19,7 @@ export default function Hero() {
             EXPERIENCES.
           </h1>
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 w-full mt-4">
-            <a href="/work" className="inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full font-sans text-sm font-semibold uppercase tracking-wider hover:bg-neutral-200 transition-colors w-max">
+            <a href="#work" className="inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full font-sans text-sm font-semibold uppercase tracking-wider hover:bg-neutral-200 transition-colors w-max">
               Explore Work <ArrowUpRight className="w-4 h-4" />
             </a>
             <p className="max-w-xs text-sm text-zinc-400 font-sans leading-relaxed">

@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between">
         {/* Left */}
         <div className="flex-shrink-0">
-          <Link href="/" className="font-mono text-sm font-bold text-white flex gap-2 tracking-widest uppercase items-center">
+          <Link href="#top" className="font-mono text-sm font-bold text-white flex gap-2 tracking-widest uppercase items-center">
             <span>Chizel</span>
             <span className="text-zinc-500">/ STUDIO</span>
           </Link>
@@ -16,10 +16,10 @@ export default function Navbar() {
 
         {/* Center */}
         <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 -translate-x-1/2">
-          {['Work', 'Services', 'Process'].map((item) => (
+          {['Work', 'Services', 'About'].map((item) => (
             <Link
               key={item}
-              href={`/${item.toLowerCase()}`}
+              href={`#${item.toLowerCase()}`}
               className="text-xs font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest"
             >
               {item}
@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Right */}
         <div className="flex-shrink-0">
           <Link
-            href="/contact"
+            href="#planner"
             className="hidden md:flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors"
           >
             Initiate Project <ArrowUpRight className="w-3 h-3" />
