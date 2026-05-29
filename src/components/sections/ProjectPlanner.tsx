@@ -50,13 +50,14 @@ export default function ProjectPlanner() {
 
             <div className="flex flex-col gap-4">
               <label className="font-mono text-[10px] text-zinc-500">BUDGET</label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {['–', '–', '–', '+'].map((b, i) => (
-                  <button key={i} type="button" className={`py-4 border border-[#1F1F1F] text-xs font-mono transition-colors hover:bg-zinc-900 ${i === 1 ? 'bg-zinc-900 border-zinc-700 text-white' : 'text-zinc-400 bg-transparent'}`}>
-                    {b}
-                  </button>
-                ))}
-              </div>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                inputMode="numeric"
+                placeholder="Enter your budget"
+                className="bg-transparent border-b border-[#1F1F1F] py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-white transition-colors font-sans rounded-none"
+              />
             </div>
 
             <div className="flex flex-col gap-4">
